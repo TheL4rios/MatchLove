@@ -1,0 +1,85 @@
+%=======================================================================
+%======================== CLAUSULAS VALIDACIÓN =========================
+%=======================================================================
+
+% Validar si 2 personas tienen la pregunta 1 contestada igual
+p1(X, Y, Z):- planfavoritosabado(X, A), planfavoritosabado(Y, A), Z is 3.75 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 2 contestada igual
+p2(X, Y, Z):- lopeorenunarelacion(X, A), lopeorenunarelacion(Y, A), Z is 5 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 3 contestada igual
+p3(X, Y, Z):- citaperfecta(X, A), citaperfecta(Y, A), Z is 3.75 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 4 contestada igual
+p4(X, Y, Z):- palabradefine(X, A), palabradefine(Y, A), Z is 3.75 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 5 contestada igual
+p5(X, Y, Z):- ver(X, A), ver(Y, A), Z is 3.75 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 6 contestada igual
+p6(X, Y, Z):- aspectoimportanterelacion(X, A), aspectoimportanterelacion(Y, A), Z is 5 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 7 contestada igual
+p7(X, Y, Z):- consuparejalegustaria(X, A), consuparejalegustaria(Y, A), Z is 5 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 8 contestada igual
+p8(X, Y, Z):- mejorparteanatomica(X, A), mejorparteanatomica(Y, A), Z is 5 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 9 contestada igual
+p9(X, Y, Z):- complexiondesuagrado(X, A), complexiondesuagrado(Y, A), Z is 5 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 10 contestada igual
+p10(X, Y, Z):- asuladoprefiere(X, A), asuladoprefiere(Y, A), Z is 5 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 11 contestada igual
+p11(X, Y, Z):- intimidadlegustaria(X, A), intimidadlegustaria(Y, A), Z is 5 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 12 contestada igual
+p12(X, Y, Z):- tipopeliculas(X, A), tipopeliculas(Y, A), Z is 3.75 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 13 contestada igual
+p13(X, Y, Z):- quehobbygustamas(X, A), quehobbygustamas(Y, A), Z is 3.75 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 14 contestada igual
+p14(X, Y, Z):- legustacocinar(X, A), legustacocinar(Y, A), Z is 4 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 15 contestada igual
+p15(X, Y, Z):- sesientemejor(X, A), sesientemejor(Y, A), Z is 3.75 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 16 contestada igual
+p16(X, Y, Z):- bebidafavorita(X, A), bebidafavorita(Y, A), Z is 4 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 17 contestada igual
+p17(X, Y, Z):- quemascota(X, A), quemascota(Y, A), Z is 4 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 18 contestada igual
+p18(X, Y, Z):- tomardecisionesteresultafacil(X, A), tomardecisionesteresultafacil(Y, A), Z is 4 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 19 contestada igual
+p19(X, Y, Z):- comidafavorita(X, A), comidafavorita(Y, A), Z is 4 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 20 contestada igual
+p20(X, Y, Z):- queesmasimportante(X, A), queesmasimportante(Y, A), Z is 5 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 21 contestada igual
+p21(X, Y, Z):- mascautivadeunapersona(X, A), mascautivadeunapersona(Y, A), Z is 3.75 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 22 contestada igual
+p22(X, Y, Z):- consederaspersonaromantica(X, A), consederaspersonaromantica(Y, A), Z is 5 ; Z is 0.
+
+% Validar si 2 personas tienen la pregunta 23 contestada igual
+p23(X, Y, Z):- mandariasfotos(X, A), mandariasfotos(Y, A), Z is 5 ; Z is 0.
+
+validarPareja(X, Y):-
+    eshombre(X), esmujer(Y), leatrae(X, mujeres), leatrae(Y, hombres);
+    eshombre(Y), esmujer(X), leatrae(X, hombres), leatrae(Y, mujeres);
+    eshombre(X), eshombre(Y), leatrae(X, hombres), leatrae(Y, hombres);
+    esmujer(X), esmujer(Y), leatrae(X, mujeres), leatrae(Y, mujeres);
+    eshombre(X), esmujer(Y), leatrae(X, mujeres), leatrae(Y, ambos);
+    eshombre(Y), esmujer(X), leatrae(X, hombres), leatrae(Y, ambos);
+    eshombre(X), esmujer(Y), leatrae(X, ambos), leatrae(Y, hombres);
+    eshombre(Y), esmujer(X), leatrae(X, ambos), leatrae(Y, mujeres);
+    leatrae(X, ambos), leatrae(Y, ambos);
+    eshombre(X), eshombre(Y), leatrae(X, hombres), leatrae(Y, ambos);
+    esmujer(X), esmujer(Y), leatrae(X, mujeres), leatrae(Y, ambos).
